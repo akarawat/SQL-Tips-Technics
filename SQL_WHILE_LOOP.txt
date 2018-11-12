@@ -1,0 +1,27 @@
+BEGIN
+		DECLARE @pLimitRow  INT
+		SET @pLimitRow = 5
+		DECLARE @i INT
+		SET @i = 1
+		WHILE (@i <= @pLimitRow)
+		  BEGIN 
+
+			PRINT + ' Row : ' + CONVERT(VARCHAR,@i)
+         
+			SET @i = @i + 1 
+		  END -- WHILE
+END
+----------------------------
+Or USE >> COALESCE
+##
+DECLARE @Names VARCHAR(8000) 
+SELECT @Names = COALESCE(@Names + ', ', '') + mcname 
+FROM [SilkScreen].[dbo].[mst_machine]
+print @Names;
+--Print: SKN-0009, SSKN-0015, SSKN-0016, SSKN-0013, SSKN-0007, SSKN-0017, SSGD-0001
+##
+DECLARE @Names VARCHAR(8000) 
+SELECT @Names = COALESCE(@Names + ', ', '') + '#' + RIGHT(mcname, 2) 
+FROM [SilkScreen].[dbo].[mst_machine]
+print @Names;
+-------------------------------------

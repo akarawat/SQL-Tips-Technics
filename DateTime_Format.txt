@@ -1,0 +1,21 @@
+select CONVERT(char(8), cast(GETDATE() as datetime), 112)
+select SUBSTRING (CONVERT(char(8), cast(GETDATE() as datetime), 112), 3, 6);
+SELECT CONVERT(char(10), GetDate(),126)
+PRINT left(CONVERT(VARCHAR(8),getdate(),108),5);
+
+PRINT cast(getdate() as time);
+select cast(getdate() as time);
+
+declare @stTime time;
+select @stTime = cast(getdate() as time);
+print @stTime;
+
+
+PRINT CONVERT(char(10), cast(GETDATE() as datetime), 121);
+PRINT left(CONVERT(VARCHAR(8),getdate(),108),5);
+PRINT left(CONVERT(VARCHAR(8),getdate(),108),5);
+PRINT left(CONVERT(VARCHAR(8),getdate(),108),2); -- HH
+PRINT right(left(CONVERT(VARCHAR(5),getdate(),108),5),2); -- MM
+PRINT left(CONVERT(VARCHAR(8),getdate(),108),5);
+PRINT left(CONVERT(VARCHAR(5),getdate(),108),5); 
+PRINT right(left(CONVERT(VARCHAR(5),getdate(),108),5),2);

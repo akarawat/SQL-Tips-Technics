@@ -1,0 +1,20 @@
+sqlcmd -S SCSLAB-PC\SQLEXPRESS -d BeethovenCellLine -U webaccess -P Smartrac2015
+>
+1> select CellID + ' ' + CellNo from mst_Cell
+2> GO
+031	Cell 1
+032	Cell 2
+033	Cell 3
+034	Cell 4
+035	Cell 5
+>
+########### Show All Tables in database
+SELECT
+  *
+FROM
+  BeethovenCellLine.INFORMATION_SCHEMA.TABLES;
+GO
+########### Show All Columns in Tables
+exec sp_columns mst_cell;
+GO;
+

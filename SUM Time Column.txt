@@ -1,0 +1,7 @@
+SET ANSI_WARNINGS OFF;
+GO
+declare @rTrkShfA time;
+select @rTrkShfA = CONVERT(TIME, DATEADD(ms, SUM(DATEDIFF(ms, '00:00:00.000', TrkShfA)), '00:00:00.000')) from LXSTimeTrack;
+print @rTrkShfA;
+SET ANSI_WARNINGS ON;
+GO
